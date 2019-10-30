@@ -76,7 +76,11 @@ validate_manifest_files() {
 REPOSITORY_PATH="$1"
 
 if [ -z $REPOSITORY_PATH ]; then
-  abort "You must provide the repository path, where the manifest.yaml file is located"
+  if [ -n $GITHUB_WORKSPACE ]; then
+    REPOSITORY_PATH="$GITHUB_WORKSPACE"
+  else        
+    abort "You must provide the repository path, where the manifest.yaml file is located"
+  fi
 fi  
 
 echo "Checking repository in $REPOSITORY_PATH"
