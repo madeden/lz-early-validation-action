@@ -6,7 +6,7 @@ inputs:
     required: true
     default: "$GITHUB_WORKSPACE"
 outputs:
-  validation-result:
+  VALIDATION_RESULT:
     description: 'The result of the validation'
 runs:
   using: 'docker'
