@@ -1,23 +1,23 @@
-# Hello world docker action
+# Landing Zone early validation action
 
-This action prints "Hello World" to the log or "Hello" + the name of a person to greet. To learn how this action was built, see "[Creating a Docker container action](https://help.github.com/en/articles/creating-a-docker-container-action)" in the GitHub Help documentation.
+Performs an early validation on the LZ repository to fail as early as possible. 
 
 ## Inputs
 
-### `who-to-greet`
+### `REPO_PATH`
 
-**Required** The name of the person to greet. Default `"World"`.
+**Required** Location of the repository in your virtual environment. Default `"$GITHUB_WORKSPACE"`.
 
 ## Outputs
 
-### `time`
+### `VALIDATION_RESULT`
 
-The time we greeted you.
+The result of the validation.
 
 ## Example usage
 
 ```yaml
-uses: actions/hello-world-docker-action@master
+uses: actions/landing-zone-early-validation@master
 with:
-  who-to-greet: 'Mona the Octocat'
+  REPO_PATH: "$GITHUB_WORKSPACE"
 ```

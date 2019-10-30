@@ -1,7 +1,7 @@
 name: 'Landing Zone early validation'
 description: 'Performs an early validation on the LZ repository to fail as early as possible'
 inputs:
-  repo-path:  # id of input
+  REPO_PATH:  # id of input
     description: 'Location of the repository in your virtual environment'
     required: true
     default: "$GITHUB_WORKSPACE"
@@ -12,4 +12,4 @@ runs:
   using: 'docker'
   image: 'Dockerfile'
   args:
-    - ${{ inputs.repo-path }}
+    - ${{ inputs.REPO_PATH }}
