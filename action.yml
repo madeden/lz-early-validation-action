@@ -1,15 +1,15 @@
-name: 'Hello World'
-description: 'Greet someone and record the time'
+name: 'Landing Zone early validation'
+description: 'Performs an early validation on the LZ repository to fail as early as possible'
 inputs:
-  who-to-greet:  # id of input
-    description: 'Who to greet'
+  repo-path:  # id of input
+    description: 'Location of the repository in your virtual environment'
     required: true
-    default: 'World'
+    default: "$GITHUB_WORKSPACE"
 outputs:
-  time: # id of output
-    description: 'The time we greeted you'
+  validation-result:
+    description: 'The result of the validation'
 runs:
   using: 'docker'
   image: 'Dockerfile'
   args:
-    - ${{ inputs.who-to-greet }}
+    - ${{ inputs.repo-path }}

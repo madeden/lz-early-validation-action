@@ -3,6 +3,7 @@
 
 abort() {
   echo "$1"
+  export validation-result=0
   exit 1
 }
 
@@ -81,3 +82,4 @@ fi
 echo "Checking repository in $REPOSITORY_PATH"
 validate_manifest "$REPOSITORY_PATH/manifest.yaml"
 validate_manifest_files "$REPOSITORY_PATH"
+export validation-result=1
