@@ -3,8 +3,8 @@ description: 'Performs an early validation on the LZ repository to fail as early
 inputs:
   REPO_PATH:  # id of input
     description: 'Location of the repository in your virtual environment'
-    required: true
-    default: "$GITHUB_WORKSPACE"
+    required: false
+    default: "/github/workspace"
 outputs:
   VALIDATION_RESULT:
     description: 'The result of the validation'
